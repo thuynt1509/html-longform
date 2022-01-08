@@ -56,7 +56,7 @@
   .box-item-right{
     margin-bottom: 20px;
     .title{
-      font-size: 20px;
+      font-size: 20px!important;
       color: #222232;
       font-weight: 700;
       border-bottom: 1px solid #E1DDDD;
@@ -67,6 +67,7 @@
   .slide-news-right{
     margin-top: -55px;
     padding-top: 55px;
+    position: relative;
     .item-row{
       display: flex;
       margin-bottom: 20px;
@@ -108,26 +109,32 @@
         }
       }
     }
-    .owl-nav{
-      button{
-        width: 17px;
-        height: 29px;
-        background: url("../images/img-longform/btn-prev.png") 0/100% no-repeat;
-        position: absolute;
-        top: 0;
-        &:focus{
-          outline: none;
-        }
-        span{
-          display: none;
-        }
-        &.owl-next{
-          transform: rotate(180deg);
-          right: 0;
-        }
-        &.owl-prev{
-          right: 20px;
-        }
+    .slick-arrow{
+      width: 17px;
+      height: 29px;
+      background: url("../images/img-longform/btn-prev.png") 0/100% no-repeat;
+      position: absolute;
+      top: 0;
+      text-indent: -999em;
+      border-radius: 0;
+      left: auto;
+      &.slick-disabled{
+        opacity: 0.5;
+        display: block;
+      }
+      &:focus{
+        outline: none;
+      }
+      span{
+        display: none;
+      }
+      &.slick-next{
+        transform: rotate(180deg);
+        right: 0;
+      }
+      &.slick-prev{
+        right: 20px;
+        transform: none;
       }
     }
   }
@@ -190,6 +197,28 @@
       background: url("../images/img-longform/icon-hotline.png") 0/100% no-repeat;
       width: 62px;
       height: 62px;
+      animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+      position: relative;
+      &::before{
+        display: block;
+        content: '';
+        width: 80px;
+        height: 80px;
+        top: -9px;
+        left: -9px;
+        position: absolute;
+        background-color: transparent;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        border: 2px solid #e60808;
+        animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+        transition: all .5s;
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        opacity: 0.5;
+      }
     }
     .name{
       color: #FF0000;
@@ -732,5 +761,43 @@
   }
   @media only screen and (max-width: 767px) {
       display: block;
+  }
+}
+@-webkit-keyframes phonering-alo-circle-img-anim {
+  0% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  10% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+}
+
+@-webkit-keyframes phonering-alo-circle-anim {
+  0% {
+    -webkit-transform: rotate(0) scale(0.5) skew(1deg);
+    -webkit-opacity: 0.1;
+  }
+  30% {
+    -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+    -webkit-opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+    -webkit-opacity: 0.1;
   }
 }

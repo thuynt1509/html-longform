@@ -64,7 +64,7 @@
   margin-bottom: 20px;
 }
 .body-longform .box-item-right .title {
-  font-size: 20px;
+  font-size: 20px !important;
   color: #222232;
   font-weight: 700;
   border-bottom: 1px solid #E1DDDD;
@@ -74,6 +74,7 @@
 .body-longform .slide-news-right {
   margin-top: -55px;
   padding-top: 55px;
+  position: relative;
 }
 .body-longform .slide-news-right .item-row {
   display: flex;
@@ -116,25 +117,33 @@
   border: 1px solid #FFB34A;
   margin-top: 4px;
 }
-.body-longform .slide-news-right .owl-nav button {
+.body-longform .slide-news-right .slick-arrow {
   width: 17px;
   height: 29px;
   background: url("../images/img-longform/btn-prev.png") 0/100% no-repeat;
   position: absolute;
   top: 0;
+  text-indent: -999em;
+  border-radius: 0;
+  left: auto;
 }
-.body-longform .slide-news-right .owl-nav button:focus {
+.body-longform .slide-news-right .slick-arrow.slick-disabled {
+  opacity: 0.5;
+  display: block;
+}
+.body-longform .slide-news-right .slick-arrow:focus {
   outline: none;
 }
-.body-longform .slide-news-right .owl-nav button span {
+.body-longform .slide-news-right .slick-arrow span {
   display: none;
 }
-.body-longform .slide-news-right .owl-nav button.owl-next {
+.body-longform .slide-news-right .slick-arrow.slick-next {
   transform: rotate(180deg);
   right: 0;
 }
-.body-longform .slide-news-right .owl-nav button.owl-prev {
+.body-longform .slide-news-right .slick-arrow.slick-prev {
   right: 20px;
+  transform: none;
 }
 @media only screen and (max-width: 767px) {
   .body-longform .right-article {
@@ -192,6 +201,26 @@
   background: url("../images/img-longform/icon-hotline.png") 0/100% no-repeat;
   width: 62px;
   height: 62px;
+  -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+          animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+  position: relative;
+}
+.box-support-fixbottom .btn-hotline .icon-hotline::before {
+  display: block;
+  content: "";
+  width: 80px;
+  height: 80px;
+  top: -9px;
+  left: -9px;
+  position: absolute;
+  background-color: transparent;
+  border-radius: 100%;
+  border: 2px solid #e60808;
+  -webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+          animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+  transition: all 0.5s;
+  transform-origin: 50% 50%;
+  opacity: 0.5;
 }
 .box-support-fixbottom .btn-hotline .name {
   color: #FF0000;
@@ -708,5 +737,43 @@
 @media only screen and (max-width: 767px) {
   .longform-bar-fixbottom-2 {
     display: block;
+  }
+}
+
+@-webkit-keyframes phonering-alo-circle-img-anim {
+  0% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  10% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+}
+@-webkit-keyframes phonering-alo-circle-anim {
+  0% {
+    -webkit-transform: rotate(0) scale(0.5) skew(1deg);
+    -webkit-opacity: 0.1;
+  }
+  30% {
+    -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+    -webkit-opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+    -webkit-opacity: 0.1;
   }
 }
