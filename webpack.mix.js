@@ -19,12 +19,15 @@ mix.webpackConfig({
         new BrowserSyncPlugin({
             files: [
                 'src/**/*',
-            ]
+            ],
+            host: 'localhost',
+            port: 3000,
+            server: {
+                baseDir: "docs/",
+                index: "index.html"
+            }
         })
     ],
-    devServer: {
-        port: '5500'
-    },
 });
 
 
@@ -37,11 +40,14 @@ mix.webpackConfig({
 
 mix
     .js('./src/app.js', './docs/assets/main.js')
-    .sass('./src/app.scss', './docs/assets/main.css')
+    // .sass('./src/css/app.scss', './docs/css/')
+    .sass('./src/main.scss', './docs/assets/')
+    .sass('./src/style-longform-nn6.scss', './docs/assets/')
     .options({
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.config.js')],
     })
     .copy('./src/app.html', './docs/index.html')
+    .copy('./src/longform-nn6.html', './docs/longform-nn6.html')
+    .copyDirectory('./src/js','./docs/js')
     .copyDirectory('./src/font','./docs/font');
-    // .copyDirectory('./src/images','./docs/images');

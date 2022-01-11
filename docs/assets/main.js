@@ -8,24 +8,12 @@
 /***/ (() => {
 
 $(document).ready(function () {
-  // $('.slide-news-right').owlCarousel({
-  //     loop:false,
-  //     margin:10,
-  //     autoplay:true,
-  //     nav:true,
-  //     items: 1,
-  //     dots: false
-  // });
   $('.slide-news-right').slick({
     infinite: false,
     slidesToShow: 1,
-    // Shows a three slides at a time
     slidesToScroll: 1,
-    // When you click an arrow, it scrolls 1 slide at a time
     arrows: true,
-    // Adds arrows to sides of slider
-    dots: false // Adds the dots on the bottom
-
+    dots: false
   });
   $("#form-ticket").on('click', 'input:checkbox', function () {
     $(this).closest('p').toggleClass('active', this.checked);
@@ -33,34 +21,35 @@ $(document).ready(function () {
   $("#btn-close-bar").click(function () {
     $(".longform-bar-fixbottom-2").addClass("shortbar-longform");
   });
-  var owl = $('.screenshot_slider').owlCarousel({
-    loop: true,
-    responsiveClass: true,
-    nav: true,
-    margin: 0,
-    autoplayTimeout: 4000,
-    smartSpeed: 400,
-    center: true,
-    responsive: {
-      0: {
-        items: 5
-      },
-      600: {
-        items: 8
-      },
-      1200: {
-        items: 7
-      }
-    }
+  $('.screenshot_slider').slick({
+    centerMode: true,
+    slidesToShow: 5,
+    dots: false,
+    arrows: true,
+    swipe: true,
+    swipeToSlide: true
   });
 });
 
 /***/ }),
 
-/***/ "./src/app.scss":
-/*!**********************!*\
-  !*** ./src/app.scss ***!
-  \**********************/
+/***/ "./src/main.scss":
+/*!***********************!*\
+  !*** ./src/main.scss ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/style-longform-nn6.scss":
+/*!*************************************!*\
+  !*** ./src/style-longform-nn6.scss ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -157,6 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/docs/assets/main": 0,
+/******/ 			"docs/assets/style-longform-nn6": 0,
 /******/ 			"docs/assets/main": 0
 /******/ 		};
 /******/ 		
@@ -207,8 +197,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/main"], () => (__webpack_require__("./src/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/assets/main"], () => (__webpack_require__("./src/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/main.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/style-longform-nn6.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
