@@ -43,6 +43,7 @@ mix
     // .sass('./src/css/app.scss', './docs/css/')
     .sass('./src/main.scss', './docs/assets/')
     .sass('./src/style-longform-nn6.scss', './docs/assets/')
+    .sass('./src/button-support-page.scss', './docs/assets/')
     .options({
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.config.js')],
