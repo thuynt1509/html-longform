@@ -29,6 +29,9 @@ $(document).ready(function () {
     swipe: true,
     swipeToSlide: true
   });
+  $("#btn-readmore-cmt").click(function () {
+    $("#box-review-comment").toggleClass("active");
+  });
 });
 
 /***/ }),
