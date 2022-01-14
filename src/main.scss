@@ -379,6 +379,16 @@
       }
     }
   }
+  .btn-dktv{
+    display: block;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #EE293B;
+    color: #ffff!important;
+    border-radius: 10px;
+    cursor: pointer;
+  }
   .form-order-content{
     .box-product-form{
       display: flex;
@@ -488,6 +498,7 @@
     }
     .date{
       font-size: 14px;
+      line-height: 1.5!important;
       span{
         &::after{
           display: inline-block;

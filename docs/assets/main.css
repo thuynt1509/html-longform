@@ -379,6 +379,16 @@
 .body-longform .item-article-longform .lst-prize .item-prize img {
   width: 100%;
 }
+.body-longform .btn-dktv {
+  display: block;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #EE293B;
+  color: #ffff !important;
+  border-radius: 10px;
+  cursor: pointer;
+}
 .body-longform .form-order-content .box-product-form {
   display: flex;
   justify-content: space-between;
@@ -485,6 +495,7 @@
 }
 .body-longform .info-video .date {
   font-size: 14px;
+  line-height: 1.5 !important;
 }
 .body-longform .info-video .date span::after {
   display: inline-block;
