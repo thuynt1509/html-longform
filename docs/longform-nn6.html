@@ -460,7 +460,9 @@
                             <span class="text-red">CHÓNG MẶT</span> nặng, dai dẳng rất khó chữa
                         </h1>
                         <div class="body-detail-article">
-                            <iframe width="100%" height="450" src="https://www.youtube.com/embed/WbiCY1ZC4gk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="box-main-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_VYKYTZwCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                             <div class="title-article title-sub-longform">
                                 <span class="text-red">nhưng vẫn còn hi vọng</span> nhờ thuốc  <span>Đông y thế hệ 2</span><br/>
                                 làm theo <span>Ngự y mật phương</span>
@@ -477,6 +479,15 @@
                                         Bởi thuốc Tây tuy giải quyết nhanh triệu chứng nhưng bệnh lại tái đi tái lại. Còn thị trường thuốc Đông y thì tràn lan các sản phẩm tác dụng không rõ rệt, vô thưởng, vô phạt nhưng lại được quảng bá thiếu trung thực, khiến bạn tốn tiền, mất thời gian mà bệnh vẫn hoàn bệnh. 
                                         Đúng, chứng chóng mặt của bạn rất khó chữa dứt, nhưng bạn đừng tuyệt vọng vì vẫn còn viên chóng mặt Đông y thế hệ 2, bào chế theo Ngự y mật phương, đã chữa khỏi 90-95% các trường hợp chóng mặt nặng, dai dẳng, thậm chí phải nhập viện. 
                                         Xin bạn hãy giành ít phút để tìm hiểu về chứng chóng mặt và viên chóng mặt Ngự y mật phương độc nhất vô nhị này.  
+                                        <ul>
+                                            <li class="">Chóng mặt kiểu xoay vòng: xuất hiện có thể từ từ hay đột ngột, người bệnh cảm thấy mọi vật xung quanh đang quay tròn quanh mình hoặc chính họ quay quanh đồ vật làm bệnh nhân mất thăng bằng, ngã.</li>
+                                            <li class="">Chóng mặt kiểu choáng váng, bệnh nhân dễ ngất. </li>
+                                            <li class="">Chóng mặt kiểu mất thăng bằng, bệnh nhân không giữ được thăng bằng, không đi đứng vững như bình thường được, thậm chí đứng yên cũng không vững. </li>
+                                            <li class="">Chóng mặt kịch phát lành tính là những cơn chóng mặt ngắn, chỉ xảy ra trong khoảng vài giây đến vài phút kèm buồn nôn. </li>
+                                            <li class="">Chóng mặt ngoại biên là loại chóng mặt thường gặp nhất khi có vấn đề trong tai. </li>
+                                            <li class="">Chóng mặt do tư thế là loại chóng mặt thường xuyên khi thay đổi vị trí, tư thế của đầu đột ngột. </li>
+                                            <li class="">Chóng mặt do viêm mê đạo tai là các cơn chóng mặt là các cơn chóng mặt liên tục.  </li>
+                                        </ul>
                                       </div>
                                     </div>
                                 </div>
@@ -700,7 +711,6 @@
                                 <!-- ảnh banner mobile -->
                                 <div class="wrp-form-longform">
                                     <div class="modal-content">
-                                        <a class="btn-close"></a>
                                         <!-- form tư vấn -->
                                         <form class="form-ticket" id="form-ticket" style="display: block;">
                                             <h5 class="modal-title">BẤM ĐỂ CHỌN VẤN ĐỀ CẦN TƯ VẤN</h5>
@@ -1004,7 +1014,7 @@
                                 <span class="icon icon-phone"></span>
                                 <span class="text-label">Hotline</span>
                             </div>
-                            <div class="item">
+                            <div class="item" data-toggle="modal" data-target="#form-receive-longform">
                                 <span class="icon icon-user"></span>
                                 <span class="text-label">Dược sĩ tư vấn</span>
                             </div>
@@ -1016,8 +1026,97 @@
                     </div>
                     <!-- mobile thanh support -->
                 </div>
-                <!-- end content longform Nn  -->
-                
+                <!-- end content longform Nn -->
+                 <!-- Modal nhận tư vấn -->
+                 <div class="modal fade" id="form-receive-longform" >
+                    <div class="modal-dialog wrp-form-longform"  role="document">
+                        <div class="modal-content">
+                            <a class="btn-close" data-dismiss="modal" aria-label="Close"></a>
+                            <!-- form tư vấn -->
+                            <form class="form-ticket" id="form-ticket" style="display: block;">
+                                <h5 class="modal-title">Bấm để chọn vấn đề cần tư vấn</h5>
+                                <div class="inner-form-ticket">
+                                    <div class="item-ticket">
+                                        <p>
+                                            <label for="tag_1">Mất ngủ, đau đầu, chóng mặt</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_1" value="tag_1"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_2">Đau mỏi vai gáy, tê bì chân tay</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_2" value="tag_2"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_3">Giải độc rượu</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_3" value="tag_3"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_4">Suy nhược cơ thể</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_4" value="tag_4"/>
+                                        </p>
+                                    </div>
+                                    <div class="item-ticket">
+                                        <p>
+                                            <label for="tag_5">Ho mạn tính</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_5" value="tag_5"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_6">Viêm họng, amidan</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_6" value="tag_6"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_7">Viêm loét miệng, Hơi thở hôi</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_7" value="tag_7"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_8">Viêm lợi, nha chu, Răng lung lay</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_8" value="tag_8"/>
+                                        </p>
+                                    </div>
+                                    <div class="item-ticket">
+                                        <p>
+                                            <label for="tag_9">Đau dạ dày</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_9" value="tag_9"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_10">Trào ngược dạ dày</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_10" value="tag_10"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_11">Đau đại tràng</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_11" value="tag_11"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_12">Đau bụng kinh</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_12" value="tag_12"/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-bottom-ticket">
+                                    <div class="d-flex w-100">
+                                        <div class="form-group mb-0">
+                                            <input type="number" class="phone" placeholder="Số điện thoại"/>
+                                        </div>
+                                        <button class="btn-register">ĐĂNG KÝ</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- form tư vấn -->
+
+                            <!-- form điền số điện thoại -->
+                            <form action="" class="form-telephone-ticket" id="" style="display: none;">
+                                <h5 class="modal-title"><span class="title-sub">Điền <span class="title-phone">SỐ ĐIỆN THOẠI</span> để dược sĩ tư vấn</span></h5>
+                                <div class="inner-form-telephone">
+                                    <div class="form-group mb-0">
+                                        <input type="number" placeholder="Số điện thoại"/>
+                                    </div>
+                                    <button class="btn-send-form">GỬI</button>
+                                </div>
+                            </form>
+                            <!-- form điền số điện thoại -->
+                        </div>
+                    </div>
+                </div>  
+                <!-- Modal nhận tư vấn -->
             </div>
         </div>
     </div>

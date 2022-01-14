@@ -2,7 +2,7 @@
   display: flex;
 }
 .body-longform .detail-article {
-  width: calc(100% - 306px);
+  flex: 1;
 }
 .body-longform .right-article {
   width: 286px;
@@ -214,6 +214,7 @@
 }
 .body-longform .item-article-longform .title-small span {
   font-weight: 700;
+  font-size: 20px !important;
 }
 .body-longform .item-article-longform .tabs {
   padding: 20px;
@@ -459,12 +460,94 @@
   color: #2E3192 !important;
   font-size: 16px !important;
 }
+.body-longform .box-main-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+.body-longform .box-main-video .iframe-video {
+  margin-bottom: 0;
+  height: 100%;
+}
+.body-longform .box-main-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.body-longform .info-video {
+  margin-top: 20px;
+}
+.body-longform .info-video .title-youtube {
+  margin-bottom: 4px;
+}
+.body-longform .info-video .date {
+  font-size: 14px;
+}
+.body-longform .nav-video-right {
+  border-bottom: none;
+}
+.body-longform .nav-video-right .nav-video {
+  display: flex;
+  margin-bottom: 10px;
+}
+.body-longform .nav-video-right .nav-video .thumb-video {
+  display: block;
+  width: 118px;
+  height: 66px;
+  margin-right: 10px;
+}
+.body-longform .nav-video-right .nav-video .info-video {
+  flex: 1;
+  margin-top: 0;
+}
+.body-longform .nav-video-right .nav-video .info-video .name-video {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.body-longform .nav-video-right .nav-video .info-video .date {
+  color: #222232;
+  font-size: 12px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.body-longform .nav-video-right .nav-video .info-video .date span::after {
+  display: inline-block;
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #222232;
+  border-radius: 50%;
+  margin: 0 3px 2px;
+}
+@media only screen and (max-width: 1199px) {
+  .body-longform .form-order-content .box-product-form {
+    flex-direction: column;
+  }
+  .body-longform .form-order-content .box-product-form .box-product-img {
+    margin: 0 auto;
+  }
+}
 @media only screen and (max-width: 1023px) {
   .body-longform .detail-article {
     width: 100%;
   }
   .body-longform .right-article {
     display: none;
+  }
+  .body-longform .tab-content-video > .tab-pane {
+    display: block;
+    opacity: 1;
+    margin-bottom: 20px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -525,6 +608,9 @@
     flex-direction: column;
     align-items: center;
   }
+  .body-longform .form-order-content .box-product-form .box-info-right .box-nxs button {
+    margin: 0 auto;
+  }
   .body-longform .item-article-longform {
     margin-left: -10px;
     margin-right: -10px;
@@ -555,7 +641,7 @@
   }
 }
 @media only screen and (max-width: 567px) {
-  .body-longform {
+  .body-longform .detail-article {
     margin-left: -10px;
     margin-right: -10px;
     width: auto;
@@ -578,255 +664,6 @@
 }
 .box-banner-form .banner-mb {
   display: none;
-}
-.box-banner-form .wrp-form-longform {
-  max-width: 499px;
-  width: 100%;
-}
-.box-banner-form .wrp-form-longform .modal-content {
-  background-color: #F1F1F1;
-  border-radius: 0;
-  padding: 0;
-}
-.box-banner-form .wrp-form-longform .btn-close {
-  display: block;
-  background: url("../images/btn-close.png") 0/100% no-repeat;
-  width: 28px;
-  height: 28px;
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  border: none;
-  cursor: pointer;
-}
-.box-banner-form .wrp-form-longform .modal-title {
-  width: 100%;
-  height: 42px;
-  background-color: #2E3092;
-  color: #fff !important;
-  font-size: 20px;
-  font-weight: 600;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-}
-.box-banner-form .wrp-form-longform .modal-title .title-sub {
-  font-size: 20px;
-}
-.box-banner-form .wrp-form-longform .modal-title .title-phone {
-  font-weight: bold;
-}
-.box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket {
-  padding: 14px 14px 0;
-}
-.box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-bottom: 1px solid #E1E1E1;
-  margin-bottom: 9px;
-}
-.box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket:last-child {
-  margin-bottom: 0;
-  border-bottom: none;
-}
-.box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p {
-  width: 49%;
-  background-color: #fff;
-  margin-bottom: 9px;
-  display: flex;
-}
-.box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p label {
-  width: 100%;
-  margin-bottom: 0;
-  height: 100%;
-  padding: 8px 6px;
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  color: #636363;
-  cursor: pointer;
-  line-height: 1.2;
-  text-align: left;
-}
-.box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p input {
-  width: 0;
-  display: none;
-}
-.box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p.active {
-  background-color: #2E3092;
-}
-.box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p.active label {
-  color: #fff;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket {
-  background-color: #2E3092;
-  padding: 9px 14px;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .form-group {
-  flex: 1;
-  line-height: 1;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket input {
-  width: 100%;
-  height: 40px;
-  background-color: #fff;
-  border: none;
-  padding: 0 20px;
-  color: #0A1C5F;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket input:focus {
-  outline: none;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .btn-register {
-  height: 40px;
-  padding: 0 20px;
-  background-color: #ffb34a;
-  text-transform: uppercase;
-  color: #2E3092;
-  border: none;
-  font-weight: bold;
-  font-size: 24px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .btn-register:focus {
-  outline: none;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .btn-support {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .btn-support .btn-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc((100% - 10px) / 2);
-  background-color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  color: #2F3091;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .btn-support .btn-form::before {
-  content: "";
-  display: block;
-  margin-right: 8px;
-  width: 31px;
-  height: 31px;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .btn-support .btn-form.btn-chat::before {
-  background: url("../images/img-longform/icon-mess2.png") 0/100% no-repeat;
-}
-.box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .btn-support .btn-form.btn-note::before {
-  background: url("../images/img-longform/icon-note2.png") 0/100% no-repeat;
-}
-.box-banner-form .wrp-form-longform .inner-form-telephone {
-  padding: 10px 30px 0;
-}
-.box-banner-form .wrp-form-longform .inner-form-telephone .form-group {
-  width: 100%;
-}
-.box-banner-form .wrp-form-longform .inner-form-telephone .form-group input {
-  width: 100%;
-  height: 40px;
-  padding: 0 20px;
-  border: none;
-  box-shadow: 0 3px 6px #00000029;
-}
-.box-banner-form .wrp-form-longform .inner-form-telephone .form-group input:focus {
-  outline: none;
-}
-.box-banner-form .wrp-form-longform .inner-form-telephone button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px auto 0;
-  padding: 0 20px;
-  width: 120px;
-  height: 40px;
-  background-color: #ffb34a;
-  color: #A70C0C;
-  font-size: 24px;
-  font-weight: bold;
-  border: none;
-}
-@media screen and (max-width: 589px) {
-  .box-banner-form .wrp-form-longform {
-    padding: 0;
-    margin-left: -10px;
-    margin-right: -10px;
-    width: auto;
-  }
-  .box-banner-form .wrp-form-longform .modal-content {
-    overflow: visible;
-  }
-  .box-banner-form .wrp-form-longform .btn-close {
-    top: -10px;
-    right: -10px;
-    width: 24px !important;
-    height: 24px !important;
-  }
-  .box-banner-form .wrp-form-longform .modal-title {
-    font-size: 16px;
-    height: 30px;
-    padding: 0 10px;
-  }
-  .box-banner-form .wrp-form-longform .modal-title .title-sub {
-    font-size: 14px;
-  }
-  .box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket {
-    padding: 10px 10px 0;
-  }
-  .box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket {
-    margin-bottom: 10px;
-  }
-  .box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p {
-    margin-bottom: 10px;
-  }
-  .box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket {
-    padding: 10px;
-  }
-  .box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket input {
-    height: 30px;
-    padding: 0 10px;
-    font-size: 15px;
-  }
-  .box-banner-form .wrp-form-longform .form-ticket .form-bottom-ticket .btn-register {
-    height: 30px;
-    padding: 0 15px;
-    font-size: 15px;
-    margin-left: 10px;
-  }
-  .box-banner-form .wrp-form-longform .inner-form-telephone .form-group {
-    width: 100%;
-  }
-  .box-banner-form .wrp-form-longform .inner-form-telephone .form-group input {
-    height: 30px;
-    padding: 0 10px;
-  }
-  .box-banner-form .wrp-form-longform .inner-form-telephone button {
-    padding: 0 10px;
-    width: 95px;
-    height: 30px;
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 413px) {
-  .box-banner-form .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p label {
-    font-size: 14px;
-    padding: 6px;
-  }
-}
-@media screen and (max-width: 374px) {
-  .box-banner-form .wrp-form-longform .modal-title {
-    font-size: 15px;
-  }
 }
 @media only screen and (max-width: 767px) {
   .box-banner-form {
@@ -958,6 +795,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .longform-bar-fixbottom-2 .bottom-longform .item:nth-child(2) {
   width: 40%;
@@ -996,6 +834,39 @@
   background: url("../images/img-longform/icon-product.png") 0/100% no-repeat;
   width: 20px;
   height: 20px;
+}
+.longform-bar-fixbottom-2 .bottom-longform .item .btn-icon {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #2E3092;
+  font-weight: 700;
+  position: absolute;
+  top: -40px;
+}
+.longform-bar-fixbottom-2 .bottom-longform .item .btn-icon::before {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+}
+.longform-bar-fixbottom-2 .bottom-longform .item .btn-mess {
+  left: 50%;
+  margin-left: -60px;
+}
+.longform-bar-fixbottom-2 .bottom-longform .item .btn-mess::before {
+  background: url("../images/img-longform/icon-mess3.png") 0/100% no-repeat;
+}
+.longform-bar-fixbottom-2 .bottom-longform .item .btn-zalo {
+  right: 50%;
+  margin-right: -45px;
+}
+.longform-bar-fixbottom-2 .bottom-longform .item .btn-zalo::before {
+  background: url("../images/img-longform/icon-zalo.png") 0/100% no-repeat;
+}
+.longform-bar-fixbottom-2 .bottom-longform .item.active .btn-icon {
+  display: flex;
 }
 .longform-bar-fixbottom-2 .box-product-longform {
   padding: 15px 10px 0px;
@@ -1078,5 +949,280 @@
   100% {
     -webkit-transform: rotate(0) scale(1) skew(1deg);
     -webkit-opacity: 0.1;
+  }
+}
+.wrp-form-longform {
+  max-width: 499px;
+  width: 100%;
+}
+.wrp-form-longform .modal-content {
+  background-color: #F1F1F1;
+  border-radius: 0;
+  padding: 0;
+}
+.wrp-form-longform .btn-close {
+  display: block;
+  background: url("../images/img-longform/btn-close.png") 0/100% no-repeat;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  border: none;
+  cursor: pointer;
+}
+.wrp-form-longform .modal-title {
+  width: 100%;
+  height: 42px;
+  background-color: #2E3092;
+  color: #fff !important;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+.wrp-form-longform .modal-title .title-sub {
+  font-size: 20px;
+}
+.wrp-form-longform .modal-title .title-phone {
+  font-weight: bold;
+}
+.wrp-form-longform .form-ticket .inner-form-ticket {
+  padding: 14px 14px 0;
+}
+.wrp-form-longform .form-ticket .inner-form-ticket .item-ticket {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #E1E1E1;
+  margin-bottom: 9px;
+}
+.wrp-form-longform .form-ticket .inner-form-ticket .item-ticket:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p {
+  width: 49%;
+  background-color: #fff;
+  margin-bottom: 9px;
+  display: flex;
+}
+.wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p label {
+  width: 100%;
+  margin-bottom: 0;
+  height: 100%;
+  padding: 8px 6px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #636363;
+  cursor: pointer;
+  line-height: 1.2;
+  text-align: left;
+}
+.wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p input {
+  width: 0;
+  display: none;
+}
+.wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p.active {
+  background-color: #2E3092;
+}
+.wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p.active label {
+  color: #fff;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket {
+  background-color: #2E3092;
+  padding: 9px 14px;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket .form-group {
+  flex: 1;
+  line-height: 1;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket input {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  padding: 0 20px;
+  color: #0A1C5F;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket input:focus {
+  outline: none;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket .btn-register {
+  height: 40px;
+  padding: 0 20px;
+  background-color: #ffb34a;
+  text-transform: uppercase;
+  color: #2E3092;
+  border: none;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket .btn-register:focus {
+  outline: none;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket .btn-support {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket .btn-support .btn-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc((100% - 10px) / 2);
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2F3091;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket .btn-support .btn-form::before {
+  content: "";
+  display: block;
+  margin-right: 8px;
+  width: 31px;
+  height: 31px;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket .btn-support .btn-form.btn-chat::before {
+  background: url("../images/img-longform/icon-mess2.png") 0/100% no-repeat;
+}
+.wrp-form-longform .form-ticket .form-bottom-ticket .btn-support .btn-form.btn-note::before {
+  background: url("../images/img-longform/icon-note2.png") 0/100% no-repeat;
+}
+.wrp-form-longform .inner-form-telephone {
+  padding: 10px 30px 0;
+}
+.wrp-form-longform .inner-form-telephone .form-group {
+  width: 100%;
+}
+.wrp-form-longform .inner-form-telephone .form-group input {
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  box-shadow: 0 3px 6px #00000029;
+}
+.wrp-form-longform .inner-form-telephone .form-group input:focus {
+  outline: none;
+}
+.wrp-form-longform .inner-form-telephone button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 0;
+  padding: 0 20px;
+  width: 120px;
+  height: 40px;
+  background-color: #ffb34a;
+  color: #A70C0C;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+}
+@media screen and (max-width: 589px) {
+  .wrp-form-longform {
+    padding: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    width: auto;
+  }
+  .wrp-form-longform .modal-content {
+    overflow: visible;
+  }
+  .wrp-form-longform .btn-close {
+    top: -10px;
+    right: -10px;
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .wrp-form-longform .modal-title {
+    font-size: 16px;
+    height: 30px;
+    padding: 0 10px;
+  }
+  .wrp-form-longform .modal-title .title-sub {
+    font-size: 14px;
+  }
+  .wrp-form-longform .form-ticket .inner-form-ticket {
+    padding: 10px 10px 0;
+  }
+  .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket {
+    margin-bottom: 10px;
+  }
+  .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p {
+    margin-bottom: 10px;
+  }
+  .wrp-form-longform .form-ticket .form-bottom-ticket {
+    padding: 10px;
+  }
+  .wrp-form-longform .form-ticket .form-bottom-ticket input {
+    height: 30px;
+    padding: 0 10px;
+    font-size: 15px;
+  }
+  .wrp-form-longform .form-ticket .form-bottom-ticket .btn-register {
+    height: 30px;
+    padding: 0 15px;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .wrp-form-longform .inner-form-telephone .form-group {
+    width: 100%;
+  }
+  .wrp-form-longform .inner-form-telephone .form-group input {
+    height: 30px;
+    padding: 0 10px;
+  }
+  .wrp-form-longform .inner-form-telephone button {
+    padding: 0 10px;
+    width: 95px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 413px) {
+  .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p label {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .wrp-form-longform .modal-title {
+    font-size: 15px;
+  }
+}
+
+.modal-dialog.wrp-form-longform {
+  padding: 10px;
+  max-width: 590px;
+}
+@media screen and (max-width: 589px) {
+  .modal-dialog.wrp-form-longform {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .btn-detail-2 .cta-item-product {
+    padding: 0 10px;
+  }
+
+  .btn-detail-2 .btn-add-to-cart {
+    min-width: auto !important;
+    width: 40px !important;
+    padding: 0 !important;
+  }
+
+  .btn-detail-2 .btn-orange-outline {
+    padding: 0 10px;
   }
 }
