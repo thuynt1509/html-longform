@@ -486,6 +486,15 @@
 .body-longform .info-video .date {
   font-size: 14px;
 }
+.body-longform .info-video .date span::after {
+  display: inline-block;
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #222232;
+  border-radius: 50%;
+  margin: 0 4px 2px 8px;
+}
 .body-longform .nav-video-right {
   border-bottom: none;
 }
