@@ -602,6 +602,10 @@
 .body-longform .nav-video-right .nav-video {
   display: flex;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+.body-longform .nav-video-right .nav-video.active {
+  background-color: #F0F0F0;
 }
 .body-longform .nav-video-right .nav-video .thumb-video {
   display: block;
@@ -624,6 +628,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  margin-top: 3px;
 }
 .body-longform .nav-video-right .nav-video .info-video .date {
   color: #222232;
