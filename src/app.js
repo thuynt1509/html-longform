@@ -24,9 +24,18 @@ $(document).ready(function () {
     $("#btn-readmore-cmt").click(function(){
         $("#box-review-comment").toggleClass("active");
     });
-    // $("#btn-open-chat").click(function(){
-    //     $(this).addClass("active");
-    // });
+    // append popup img giấy phép
+    var htmlPopupImg = $( '<div class="popup-img"><div class="overlay"></div><div class="img-show"><span class="btn-close">X</span><img src=""></div></div>');
+    $('body').on('click', '.lst-prize img', function() {
+		var $src = $(this).attr("src");
+        $( "body" ).append(htmlPopupImg);
+        $(".popup-img").show();
+        $(".img-show img").attr("src", $src);
+	});
+    $('body').on('click', '.btn-close, .overlay', function() {
+        $(".popup-img").hide();
+    });
+    // end append popup img giấy phép
    
 });
 

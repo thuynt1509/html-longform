@@ -31,9 +31,18 @@ $(document).ready(function () {
   });
   $("#btn-readmore-cmt").click(function () {
     $("#box-review-comment").toggleClass("active");
-  }); // $("#btn-open-chat").click(function(){
-  //     $(this).addClass("active");
-  // });
+  }); // append popup img giấy phép
+
+  var htmlPopupImg = $('<div class="popup-img"><div class="overlay"></div><div class="img-show"><span class="btn-close">X</span><img src=""></div></div>');
+  $('body').on('click', '.lst-prize img', function () {
+    var $src = $(this).attr("src");
+    $("body").append(htmlPopupImg);
+    $(".popup-img").show();
+    $(".img-show img").attr("src", $src);
+  });
+  $('body').on('click', '.btn-close, .overlay', function () {
+    $(".popup-img").hide();
+  }); // end append popup img giấy phép
 });
 $(function () {
   var $win = $(window);
@@ -79,6 +88,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************!*\
   !*** ./src/button-support-page.scss ***!
   \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/css-fix-select-2.scss":
+/*!***********************************!*\
+  !*** ./src/css-fix-select-2.scss ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -175,6 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/docs/assets/main": 0,
+/******/ 			"docs/assets/css-fix-select-2": 0,
 /******/ 			"docs/assets/button-support-page": 0,
 /******/ 			"docs/assets/style-longform-nn6": 0,
 /******/ 			"docs/assets/main": 0
@@ -227,10 +250,11 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/style-longform-nn6.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/button-support-page.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/style-longform-nn6.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/button-support-page.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/css-fix-select-2.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
