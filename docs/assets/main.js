@@ -43,6 +43,7 @@ $(document).ready(function () {
   $('body').on('click', '.btn-close, .overlay', function () {
     $(".popup-img").hide();
   }); // end append popup img giấy phép
+<<<<<<< HEAD
 
   $(".btn-loadmore-mb").click(function () {
     $(this).parents(".para-text").addClass("active");
@@ -57,6 +58,8 @@ $(document).ready(function () {
     var price_num = num_price.toLocaleString();
     $(this).parents().parents(".box-price").children(".total-price").children(".box-cell-price").val(price_num + ' VND');
   });
+=======
+>>>>>>> 7073b2d19cfa413d7eaf196e3dda42a91d69352f
 });
 $(function () {
   var $win = $(window);
@@ -135,6 +138,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************!*\
   !*** ./src/button-support-page.scss ***!
   \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/css-fix-select-2.scss":
+/*!***********************************!*\
+  !*** ./src/css-fix-select-2.scss ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -231,6 +247,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/docs/assets/main": 0,
+/******/ 			"docs/assets/css-fix-select-2": 0,
 /******/ 			"docs/assets/button-support-page": 0,
 /******/ 			"docs/assets/style-longform-nn6": 0,
 /******/ 			"docs/assets/main": 0
@@ -283,10 +300,11 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/style-longform-nn6.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/button-support-page.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/style-longform-nn6.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/button-support-page.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/css-fix-select-2.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
