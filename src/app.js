@@ -24,10 +24,31 @@ $(document).ready(function () {
     $("#btn-readmore-cmt").click(function(){
         $("#box-review-comment").toggleClass("active");
     });
-    // $("#btn-open-chat").click(function(){
-    //     $(this).addClass("active");
-    // });
+    // append popup img giấy phép
+    var htmlPopupImg = $( '<div class="popup-img"><div class="overlay"></div><div class="img-show"><span class="btn-close">X</span><img src=""></div></div>');
+    $('body').on('click', '.lst-prize img', function() {
+		var $src = $(this).attr("src");
+        $( "body" ).append(htmlPopupImg);
+        $(".popup-img").show();
+        $(".img-show img").attr("src", $src);
+	});
+    $('body').on('click', '.btn-close, .overlay', function() {
+        $(".popup-img").hide();
+    });
+    // end append popup img giấy phép
+    $(".btn-loadmore-mb").click(function(){
+        $(this).parents(".para-text").addClass("active");
+    });
    
+    // onchange input number by price 
+    $(document).on("change", ".input-number", function () {
+        if ($(this).val() < 1) {
+            $(this).val(1);
+        }
+        var num_price = parseInt($(this).val()) * parseInt(price);
+        var price_num = num_price.toLocaleString();
+        $(this).parents().parents(".box-price").children(".total-price").children(".box-cell-price").val(price_num + ' VND');
+    });
 });
 
 $(function(){				
@@ -45,4 +66,36 @@ $(function(){
             $box.addClass("active");
         }
     });
+});
+
+
+$(function () {
+    set_($('#number-max'), 100); //count form 1
+    set_($('#number-max-2'), 100); //count form 2
+
+    function set_(_this, max) {
+        var block = _this.parent();
+
+        block.find(".increase").click(function () {
+            var currentVal = parseInt(_this.val());
+            console.log(currentVal);
+
+            if (currentVal != NaN && currentVal + 1 <= max) {
+                _this.val(currentVal + 1);
+                var num_price = (currentVal + 1) * parseInt(price);
+                var price_num = num_price.toLocaleString();
+                block.parents().parents(".box-price").children(".total-price").children(".box-cell-price").val(price_num + ' VND');
+            }
+        });
+        block.find(".decrease").click(function () {
+            var currentVal = parseInt(_this.val());
+
+            if (currentVal != NaN && currentVal > 1) {
+                _this.val(currentVal - 1);
+                var num_price = (currentVal - 1) * parseInt(price);
+                var price_num = num_price.toLocaleString();
+                block.parents().parents(".box-price").children(".total-price").children(".box-cell-price").val(price_num + ' VND');
+            }
+        });
+    }
 });

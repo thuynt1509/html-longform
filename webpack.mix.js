@@ -51,5 +51,6 @@ mix
     .copy('./src/app.html', './docs/index.html')
     .copy('./src/longform-nn6.html', './docs/longform-nn6.html')
     .copy('./src/video.html', './docs/')
+    .copy('./src/longform-xithong.html', './docs/')
     .copyDirectory('./src/js','./docs/js')
     .copyDirectory('./src/font','./docs/font');
