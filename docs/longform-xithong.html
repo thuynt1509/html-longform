@@ -552,7 +552,7 @@
                             </div>
                             <div class="item-article-longform">
                                 <h2 class="rs title-small"><span>Xịt họng Nhất Nhất Plus - Thường cắt cơn ho trong 10 phút</span></h2>
-                                <div class="tabs pb-0">
+                                <div class="tabs">
                                     <div class="tab tab-detail-content">
                                       <label class="tab-label" for="chck1">
                                          <span>Xịt họng Nhất Nhất Plus được sản xuất tại nhà máy Dược phẩm Nhất Nhất đạt chuẩn GMP- WHO mang lại hiệu quả vượt trội</span>
@@ -628,7 +628,7 @@
                                                 <div class="d-flex">
                                                     <input type="button" value="-" class="btn-action decrease">
                                                     <input type="text" class="input-number quantity" name="quantity" id="number-max" value="1">
-                                                    <input type="button" value="-" class="btn-action increase">
+                                                    <input type="button" value="+" class="btn-action increase">
                                                 </div>
                                             </div>
                                             <div class="total-price">
@@ -780,7 +780,7 @@
                                                 <div class="d-flex">
                                                     <input type="button" value="-" class="btn-action decrease">
                                                     <input type="text" class="input-number quantity" name="quantity" id="number-max-2" value="1">
-                                                    <input type="button" value="-" class="btn-action increase">
+                                                    <input type="button" value="+" class="btn-action increase">
                                                 </div>
                                             </div>
                                             <div class="total-price">
@@ -858,6 +858,14 @@
                                                         <label for="tag_6">Viêm họng, amidan, thanh quản mạn tính</label>
                                                         <input class="check_tag" type="checkbox" name="tags[]" id="tag_6" value="tag_6"/>
                                                     </p>
+                                                    <p>
+                                                        <label for="tag_7">Viêm họng, amidan</label>
+                                                        <input class="check_tag" type="checkbox" name="tags[]" id="tag_7" value="tag_5"/>
+                                                    </p>
+                                                    <p>
+                                                        <label for="tag_8">Viêm họng, amidan</label>
+                                                        <input class="check_tag" type="checkbox" name="tags[]" id="tag_8" value="tag_6"/>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="form-bottom-ticket">
@@ -866,10 +874,6 @@
                                                         <input type="number" class="phone" placeholder="Số điện thoại"/>
                                                     </div>
                                                     <button class="btn-register">ĐĂNG KÝ</button>
-                                                </div>
-                                                <div class="btn-support">
-                                                    <a href="#" class="btn-form btn-chat">Dược sỹ tư vấn</a>
-                                                    <a href="#" class="btn-form btn-note">Form Đăng ký</a>
                                                 </div>
                                             </div>
                                         </form>
@@ -1083,28 +1087,56 @@
                                 <div class="inner-form-ticket">
                                     <div class="item-ticket">
                                         <p>
-                                            <label for="tag_1">Ho, đau rát họng do covid</label>
+                                            <label for="tag_1">Mất ngủ, đau đầu, chóng mặt</label>
                                             <input class="check_tag" type="checkbox" name="tags[]" id="tag_1" value="tag_1"/>
                                         </p>
                                         <p>
-                                            <label for="tag_2">Ho, đau rát họng hậu Covid</label>
+                                            <label for="tag_2">Đau mỏi vai gáy, tê bì chân tay</label>
                                             <input class="check_tag" type="checkbox" name="tags[]" id="tag_2" value="tag_2"/>
                                         </p>
                                         <p>
-                                            <label for="tag_3">Dự phòng covid</label>
+                                            <label for="tag_3">Giải độc rượu</label>
                                             <input class="check_tag" type="checkbox" name="tags[]" id="tag_3" value="tag_3"/>
                                         </p>
                                         <p>
-                                            <label for="tag_4">Ho, đau rát họng cấp tính</label>
+                                            <label for="tag_4">Suy nhược cơ thể</label>
                                             <input class="check_tag" type="checkbox" name="tags[]" id="tag_4" value="tag_4"/>
                                         </p>
+                                    </div>
+                                    <div class="item-ticket">
                                         <p>
-                                            <label for="tag_5">Viêm họng, amidan, thanh quản cấp</label>
+                                            <label for="tag_5">Ho mạn tính</label>
                                             <input class="check_tag" type="checkbox" name="tags[]" id="tag_5" value="tag_5"/>
                                         </p>
                                         <p>
-                                            <label for="tag_6">Viêm họng, amidan, thanh quản mạn tính</label>
+                                            <label for="tag_6">Viêm họng, amidan</label>
                                             <input class="check_tag" type="checkbox" name="tags[]" id="tag_6" value="tag_6"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_7">Viêm loét miệng, Hơi thở hôi</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_7" value="tag_7"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_8">Viêm lợi, nha chu, Răng lung lay</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_8" value="tag_8"/>
+                                        </p>
+                                    </div>
+                                    <div class="item-ticket">
+                                        <p>
+                                            <label for="tag_9">Đau dạ dày</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_9" value="tag_9"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_10">Trào ngược dạ dày</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_10" value="tag_10"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_11">Đau đại tràng</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_11" value="tag_11"/>
+                                        </p>
+                                        <p>
+                                            <label for="tag_12">Đau bụng kinh</label>
+                                            <input class="check_tag" type="checkbox" name="tags[]" id="tag_12" value="tag_12"/>
                                         </p>
                                     </div>
                                 </div>
