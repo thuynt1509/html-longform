@@ -1289,7 +1289,6 @@
   margin-top: -15px;
   background-color: #2E3092;
   text-indent: -999em;
-  font-size: 0;
 }
 .longform-bar-fixbottom-2 .bottom-longform .item .icon::before {
   display: block;
@@ -1930,6 +1929,7 @@
   margin-bottom: 10px;
   text-indent: -9999em;
   position: relative;
+  font-size: 0;
 }
 .box-support-hotline .icon-hotline {
   background-color: #e60808;

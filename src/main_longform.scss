@@ -1261,7 +1261,6 @@
               margin-top: -15px;
               background-color: #2E3092;
               text-indent: -999em;
-              font-size: 0;
               &::before{
                   display: block;
                   content: "";
@@ -1946,6 +1945,7 @@
       margin-bottom: 10px;
       text-indent: -9999em;
       position: relative;
+      font-size: 0;
   }
   .icon-hotline{
     background-color: #e60808;
