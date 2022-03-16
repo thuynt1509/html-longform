@@ -12,6 +12,8 @@ $(document).ready(function () {
 
     $("#btn-close-bar").click(function(){
         $(".longform-bar-fixbottom-2").addClass("shortbar-longform");
+        $(".longform-bar-fixbottom-2").removeClass("support-active");
+        $(".longform-bar-fixbottom-2").removeClass("product-active");
     });
     $('.screenshot_slider').slick({
         centerMode: true,
@@ -48,6 +50,16 @@ $(document).ready(function () {
         var num_price = parseInt($(this).val()) * parseInt(price);
         var price_num = num_price.toLocaleString();
         $(this).parents().parents(".box-price").children(".total-price").children(".box-cell-price").val(price_num + ' VND');
+    });
+    $("#open-support-active").click(function(){
+        $(".longform-bar-fixbottom-2").removeClass("shortbar-longform");
+        $(".longform-bar-fixbottom-2").removeClass("product-active");
+        $(".longform-bar-fixbottom-2").toggleClass("support-active");
+    });
+    $("#open-product-slide").click(function(){
+        $(".longform-bar-fixbottom-2").removeClass("shortbar-longform");
+        $(".longform-bar-fixbottom-2").removeClass("support-active");
+        $(".longform-bar-fixbottom-2").toggleClass("product-active");
     });
 });
 

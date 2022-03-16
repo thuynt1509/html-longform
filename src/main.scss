@@ -1005,12 +1005,13 @@
     display: none;
   }
   &.box-banner-xithong{
-    background: none;
+    background: #6ac7f0;
     padding: 0;
     display: flex;
     .box-product-left{
-      width: 51%;
+      width: 50%;
       position: relative;
+      margin-bottom: 0;
       .info-product-img{
         position: absolute;
         top: 0;
@@ -1060,7 +1061,8 @@
       }
     }
     .wrp-form-longform{
-      width: 49%;
+      width: 50%;
+      margin-bottom: 0;
     }
   }
   @media only screen and (max-width:1023px) {
@@ -1169,24 +1171,26 @@
     
   }
   .btn-close{
-      display: block;
+      display: none;
       background: url("../images/img-longform/btn-close.png")0/100% no-repeat;
       width: 17px;
       height: 17px;
       position: absolute;
       top: -10px;
       right: 0;
+      z-index: 4;
   }
   .top-freeship{
       background-color: #ffb44c;
       height: 27px;
       width: 100%;
       padding: 0 20px;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: space-between;
       color: #2E3092; 
       font-weight: 600;
+      z-index: 3;
       span{
           font-weight: 900;
           font-size: 12px;
@@ -1254,6 +1258,7 @@
                       background: url("../images/img-longform/icon-telephone.png") 0/100% no-repeat;
                       width: 20px;
                       height: 20px;
+                      animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
                   }
               }
               &.icon-user{
@@ -1313,6 +1318,7 @@
       padding: 15px 10px 0px;
       margin-top: -25px;
       position: relative;
+      height: 0;
       .slick-list{
         padding: 0!important;
       }
@@ -1351,6 +1357,7 @@
       padding: 0!important;
       border-radius: 0!important;
       text-indent: -999em;
+      z-index: 1;
       &.slick-prev{
         left: -10px;
         transform: none;
@@ -1374,8 +1381,10 @@
       align-items: center;
       justify-content: center;
       border-right: 1px solid #fff;
-      button{
-        display: inline-block;
+      .btn-buy{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 50%;
         background-color: #EE293B;
         color: #fff;
@@ -1402,7 +1411,79 @@
         width: 24px;
         height: 24px;
         margin-bottom: 4px;
+        animation: 1s ease-in-out 0s infinite normal none running phonering-alo-circle-img-anim;
       }
+    }
+  }
+  .box-chat-bottom{
+    width: 100%;
+    background-color: #ffffff82;
+    display: none;
+    height: 60px;
+    &.active{
+      display: block;
+    }
+    .icon{
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 0;
+      background-color: #2E3092;
+      position: absolute;
+      z-index: 2;
+      &.icon-mess{
+        background: url("../images/img-longform/icon-mess-2.png") 0/100% no-repeat;
+        bottom: 65px;
+        left: 50%;
+        margin-left: -20px;
+      }
+      &.icon-zalo{
+        background: url("../images/img-longform/icon-zalo-2.png") 0/100% no-repeat;
+        bottom: 50px;
+        left: 50%;
+        margin-left: -70px;
+      }
+      &.icon-list{
+        background: url("../images/img-longform/icon-list-2.png") 0/100% no-repeat;
+        bottom: 50px;
+        right: 50%;
+        margin-right: -70px;
+      }
+    }
+  }
+  &.support-active{
+    background-color: transparent;
+    .box-chat-bottom{
+      display: block;
+      z-index: 2;
+    }
+    .btn-close{
+      display: block;
+    }
+    .box-product-longform{
+      height: 0;
+      opacity: 0;
+      z-index: 1;
+      padding: 0;
+      margin-top: 0;
+    }
+  }
+  &.product-active{
+    
+    .btn-close{
+      display: block;
+    }
+    .top-freeship{
+      display: flex;
+    }
+    .box-product-longform{
+      height: 85px;
+      opacity: 1;
+      z-index: 9;
+    }
+    .box-chat-bottom{
+      display: none;
     }
   }
   @media only screen and (max-width: 767px) {
@@ -1451,10 +1532,12 @@
 .wrp-form-longform{
   max-width: 499px;
   width: 100%;
+  margin-bottom: 0;
   .modal-content{
       background-color: #F1F1F1;
       border-radius: 0;
       padding: 0;
+      margin-bottom: 0;
   }
   .btn-close{
       display: block;
@@ -1490,6 +1573,7 @@
   .form-ticket{
       .inner-form-ticket{
           padding: 10px 10px 0;
+          margin-bottom: 0;
           .item-ticket{
               display: flex;
               flex-wrap: wrap;
@@ -1534,6 +1618,7 @@
       .form-bottom-ticket{
           background-color: #2E3092;
           padding: 9px 14px;
+          margin-bottom: 0;
           .form-group{
               flex: 1;
               line-height: 1;
