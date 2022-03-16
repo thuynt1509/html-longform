@@ -117,10 +117,10 @@ $(function () {
 
 /***/ }),
 
-/***/ "./src/main.scss":
-/*!***********************!*\
-  !*** ./src/main.scss ***!
-  \***********************/
+/***/ "./src/main_longform.scss":
+/*!********************************!*\
+  !*** ./src/main_longform.scss ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -259,7 +259,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			"docs/assets/css-fix-select-2": 0,
 /******/ 			"docs/assets/button-support-page": 0,
 /******/ 			"docs/assets/style-longform-nn6": 0,
-/******/ 			"docs/assets/main": 0
+/******/ 			"docs/assets/main_longform": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -309,11 +309,11 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/style-longform-nn6.scss")))
-/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/button-support-page.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main"], () => (__webpack_require__("./src/css-fix-select-2.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main_longform"], () => (__webpack_require__("./src/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main_longform"], () => (__webpack_require__("./src/main_longform.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main_longform"], () => (__webpack_require__("./src/style-longform-nn6.scss")))
+/******/ 	__webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main_longform"], () => (__webpack_require__("./src/button-support-page.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/assets/css-fix-select-2","docs/assets/button-support-page","docs/assets/style-longform-nn6","docs/assets/main_longform"], () => (__webpack_require__("./src/css-fix-select-2.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

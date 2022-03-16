@@ -66,6 +66,11 @@
   max-width: 100% !important;
 }
 
+.error {
+  margin-top: 0.5rem;
+  padding: 0 10px;
+}
+
 @media only screen and (max-width: 767px) {
   .body-two-col {
     padding-top: 0;
@@ -578,6 +583,7 @@
   display: flex;
   align-items: flex-end;
   font-weight: bold;
+  margin: 10px 0;
 }
 .body-longform .form-order-content .box-product-form .box-info-right .box-nxs p {
   flex: 1;
@@ -815,7 +821,7 @@
   .body-longform .form-order-content .box-product-form .box-info-right.p-info-20 .box-nxs button {
     position: absolute;
     width: 105px;
-    bottom: 25px;
+    bottom: 10px;
     right: 10px;
     font-weight: 700;
   }
@@ -854,6 +860,7 @@
   .body-longform .form-order-content .box-product-form .box-info-right .box-nxs {
     flex-direction: column;
     align-items: center;
+    margin: 0;
   }
   .body-longform .form-order-content .box-product-form .box-info-right .box-nxs button {
     margin: 0 auto;
@@ -872,6 +879,9 @@
   .body-longform .form-order-content .box-product-form .box-info-right .box-price .form-price label {
     width: 100px;
     margin-right: 0;
+  }
+  .body-longform .form-order-content .box-product-form .box-info-right .box-price .total-price {
+    margin-top: 10px;
   }
   .body-longform .form-order-content .box-product-form .box-info-right .box-price .total-price .box-cell-price {
     height: 40px;

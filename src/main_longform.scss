@@ -7,6 +7,10 @@
 .max-width-full{
   max-width:100%!important;
 }
+.error{
+  margin-top: 0.5rem;
+  padding: 0 10px;
+}
 @media only screen and (max-width:767px) {
   .body-two-col{
     padding-top: 0;
@@ -20,6 +24,10 @@
   display: flex;
   .detail-article{
     flex: 1;
+  }
+  .body-detail-article div{
+    margin-bottom: 0;
+    line-height: inherit;
   }
   .right-article{
     width: 286px;
@@ -384,7 +392,7 @@
         padding-bottom: 10px;
         background-image: linear-gradient(#ffffffad, white);
         position: absolute;
-        bottom: -10px;
+        bottom: 0;
         left: 0;
         width: 100%;
         .text-readmore{
@@ -515,6 +523,7 @@
           display: flex;
           align-items: flex-end;
           font-weight: bold;
+          margin: 10px 0;
           p{
             flex: 1;
             color: #2E3192;
@@ -766,7 +775,7 @@
               button{
                 position: absolute;
                 width: 105px;
-                bottom:25px;
+                bottom:10px;
                 right: 10px;
                 font-weight: 700;
               }
@@ -807,6 +816,7 @@
           .box-nxs{
             flex-direction: column;
             align-items: center;
+            margin: 0;
             button{
               margin: 0 auto;
             }
@@ -828,6 +838,7 @@
               }
             }
             .total-price{
+              margin-top: 10px;
               .box-cell-price{
                 height: 40px;
                 width: calc(100% - 205px);
@@ -1111,6 +1122,7 @@
     background: url("../images/img-longform/icon-freeship1.png") 0/100% no-repeat;
     width: 228px;
     height: 72px;
+    font-size: 0;
   }
   .text-ship{
     display: flex;
@@ -1913,3 +1925,178 @@
       }
   }
 }
+
+// style box hotline bottom
+.box-support-hotline{
+  position: fixed;
+  z-index: 10;
+  bottom: 50px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  .icon{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0A7CFF;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+      text-indent: -9999em;
+      position: relative;
+  }
+  .icon-hotline{
+    background-color: #e60808;
+    order: 4;
+      i{
+          display: block;
+          background: url("../images/img-longform/icon-phone-bottom.png") 0/100% no-repeat;
+          width: 70%;
+          height: 70%;
+          animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+      }
+      &::before{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 50%;
+          border: solid 1px #e6080899;
+          -webkit-animation-name: zoomin;
+          animation-name: zoomin;
+          -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+      }
+      &::after{
+          content: "";
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          right: -10px;
+          bottom: -10px;
+          border-radius: 50%;
+          background: #e60808cc;
+          z-index: -1;
+          -webkit-animation-name: zoomout;
+          animation-name: zoomout;
+          -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+          -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+      }
+  }
+  .icon-zalo{
+    order: 3;
+      &::before{
+          content: '';
+          display: block;
+          background: url("../images/img-longform/icon-zalo-bottom.png") 0/100% no-repeat;
+          width: 53px;
+          height: 53px;
+      }
+  }
+  .icon-chat{
+    order: 2;
+      &::before{
+          content: '';
+          display: block;
+          background: url("../images/img-longform/icon-fb-bottom.png") 0/100% no-repeat;
+          width: 80%;
+          height: 80%;
+      }
+  }
+  .icon-checklist{
+    order: 1;
+      &::before{
+          content: '';
+          display: block;
+          background: url("../images/img-longform/icon-registed-3.png") 0/100% no-repeat;
+          width: 50%;
+          height: 50%;
+      }
+  }
+  @media only screen and (max-width:767px) {
+      flex-direction: row-reverse;
+      width: 100%;
+      right: 0;
+      bottom: 0;
+      justify-content: space-around;
+      .icon-chat{
+        order: 1;
+      }
+      .icon-zalo{
+        order: 2;
+      }
+      .icon-checklist{
+        order: 3;
+      }
+      .icon-hotline{
+        order: 4;
+      }
+  }
+}
+@keyframes zoomin{
+  0% {
+      transform: scale(0.8);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2.2);
+      opacity: 0.1;
+  }
+}
+@keyframes zoomout{
+  0% {
+      transform: scale(0.8);
+      opacity: 0.8;
+  }
+  100% {
+      transform: scale(1.1);
+      opacity: 0.3;
+  }
+}
+@-webkit-keyframes phonering-alo-circle-img-anim {
+  0% {
+      -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  10% {
+      -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+      -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+      -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+      -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+      -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  100% {
+      -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+}
+@-webkit-keyframes phonering-alo-circle-anim {
+  0% {
+      -webkit-transform: rotate(0) scale(0.5) skew(1deg);
+      -webkit-opacity: 0.1;
+  }
+  30% {
+      -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+      -webkit-opacity: 0.5;
+  }
+  100% {
+      -webkit-transform: rotate(0) scale(1) skew(1deg);
+      -webkit-opacity: 0.1;
+  }
+}
+// style box hotline bottom
