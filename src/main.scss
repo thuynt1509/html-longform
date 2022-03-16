@@ -1171,7 +1171,7 @@
     
   }
   .btn-close{
-      display: none;
+      display: block;
       background: url("../images/img-longform/btn-close.png")0/100% no-repeat;
       width: 17px;
       height: 17px;
@@ -1185,7 +1185,7 @@
       height: 27px;
       width: 100%;
       padding: 0 20px;
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: space-between;
       color: #2E3092; 
@@ -1318,7 +1318,7 @@
       padding: 15px 10px 0px;
       margin-top: -25px;
       position: relative;
-      height: 0;
+      height: 85px;
       .slick-list{
         padding: 0!important;
       }
@@ -1452,6 +1452,17 @@
       }
     }
   }
+  &.hide-content-menu{
+    .btn-close{
+      display: none;
+    }
+    .top-freeship{
+      display: none;
+    }
+    .box-product-longform{
+      height: 0;
+    }
+  }
   &.support-active{
     background-color: transparent;
     .box-chat-bottom{
@@ -1470,7 +1481,6 @@
     }
   }
   &.product-active{
-    
     .btn-close{
       display: block;
     }
