@@ -1136,6 +1136,9 @@
     width: auto;
     max-width: inherit;
   }
+  .box-banner-form.box-banner-xithong .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p {
+    width: 100%;
+  }
 }
 
 .box-freeship-form {
@@ -1767,7 +1770,6 @@
     margin-bottom: 10px;
   }
   .wrp-form-longform .form-ticket .inner-form-ticket .item-ticket p {
-    width: 100%;
     margin-bottom: 10px;
   }
   .wrp-form-longform .form-ticket .form-bottom-ticket {
