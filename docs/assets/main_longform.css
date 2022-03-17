@@ -516,6 +516,9 @@
   margin-bottom: 0;
   font-weight: 700;
 }
+.body-longform .form-order-content .top span i {
+  font-style: normal;
+}
 .body-longform .form-order-content .box-product-form {
   display: flex;
   justify-content: space-between;
@@ -893,6 +896,12 @@
     padding: 10px 50px;
     line-height: 1.4;
   }
+  .body-longform .form-order-content .top span {
+    display: block;
+  }
+  .body-longform .form-order-content .top span i {
+    display: none;
+  }
   .body-longform .form-order-content.form-order-xithong .box-product-form .box-info-right .price-box {
     display: none;
   }
@@ -936,7 +945,7 @@
     margin-top: 15px;
   }
   .body-longform .form-order-content.form-order-xithong .box-product-form .box-product-img .info-product-img .btn-order {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 135px;
@@ -1912,11 +1921,22 @@
   }
 }
 
+.form-position-hide {
+  display: block;
+  position: relative;
+  top: -150px;
+}
+@media only screen and (max-width: 767px) {
+  .form-position-hide {
+    top: -85px;
+  }
+}
+
 .box-support-hotline {
   position: fixed;
   z-index: 10;
   bottom: 50px;
-  right: 5px;
+  right: 25px;
   display: flex;
   flex-direction: column;
 }
@@ -1981,7 +2001,7 @@
   animation-direction: alternate;
 }
 .box-support-hotline .icon-zalo {
-  order: 3;
+  order: 2;
 }
 .box-support-hotline .icon-zalo::before {
   content: "";
@@ -1991,7 +2011,7 @@
   height: 53px;
 }
 .box-support-hotline .icon-chat {
-  order: 2;
+  order: 3;
 }
 .box-support-hotline .icon-chat::before {
   content: "";
@@ -2013,10 +2033,10 @@
 @media only screen and (max-width: 767px) {
   .box-support-hotline {
     flex-direction: row-reverse;
-    width: 100%;
-    right: 0;
+    width: calc(100% - 48px);
+    right: 24px;
     bottom: 0;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .box-support-hotline .icon-chat {
     order: 1;

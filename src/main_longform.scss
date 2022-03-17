@@ -457,6 +457,11 @@
       padding: 10px;
       margin-bottom: 0;
       font-weight: 700;
+      span{
+        i{
+          font-style: normal;
+        }
+      }
     }
     .box-product-form{
       display: flex;
@@ -852,6 +857,12 @@
         font-size: 20px;
         padding: 10px 50px;
         line-height: 1.4;
+        span{
+          display: block;
+          i{
+            display: none;
+          }
+        }
       }
       &.form-order-xithong{
         .box-product-form{
@@ -898,7 +909,7 @@
                 margin-top: 15px;
               }
               .btn-order{
-                display: flex;
+                display: none;
                 align-items: center;
                 justify-content: center;
                 width: 135px;
@@ -1934,13 +1945,20 @@
       }
   }
 }
-
+.form-position-hide{
+  display: block;
+  position: relative;
+  top: -150px;
+  @media only screen and (max-width:767px) {
+    top: -85px;
+  }
+}
 // style box hotline bottom
 .box-support-hotline{
   position: fixed;
   z-index: 10;
   bottom: 50px;
-  right: 5px;
+  right: 25px;
   display: flex;
   flex-direction: column;
   .icon{
@@ -2003,7 +2021,7 @@
       }
   }
   .icon-zalo{
-    order: 3;
+    order: 2;
       &::before{
           content: '';
           display: block;
@@ -2013,7 +2031,7 @@
       }
   }
   .icon-chat{
-    order: 2;
+    order: 3;
       &::before{
           content: '';
           display: block;
@@ -2033,11 +2051,11 @@
       }
   }
   @media only screen and (max-width:767px) {
-      flex-direction: row-reverse;
-      width: 100%;
-      right: 0;
-      bottom: 0;
-      justify-content: space-around;
+    flex-direction: row-reverse;
+    width: calc(100% - 48px);
+    right: 24px;
+    bottom: 0;
+    justify-content: space-between;
       .icon-chat{
         order: 1;
       }
