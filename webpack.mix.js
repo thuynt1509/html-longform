@@ -45,6 +45,7 @@ mix
     .sass('./src/style-longform-nn6.scss', './docs/assets/')
     .sass('./src/button-support-page.scss', './docs/assets/')
     .sass('./src/css-fix-select-2.scss', './docs/assets/')
+    .sass('./src/style-modal-sucess.scss', './docs/assets/')
     .options({
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.config.js')],

@@ -1,0 +1,48 @@
+// modal-success
+.modal-success{
+    .modal-dialog{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      width: 90%;
+      margin: 0 auto;
+      .modal-content{
+        padding: 0;
+        border-radius: 0;
+        overflow: visible;
+      }
+    }
+    .header{
+      background-color: #FFB34B;
+      height: 50px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      .logo{
+        display: block;
+        background: url("../images/Logo-blue.png") 0/100% no-repeat;
+        width: 165px;
+        height: 30px;
+        font-size: 0;
+        margin: 0;
+      }
+    }
+    .modal-body{
+      padding: 28px 23px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .btn-close{
+      display: block;
+      background: url("../images/btn-close.png") 0/100% no-repeat;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      border: none;
+      cursor: pointer;
+      z-index: 9;
+    }
+  }
+  // modal modal-success

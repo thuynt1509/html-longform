@@ -1,4 +1,95 @@
+
+(function($){
+
+    /**
+     * Copyright 2012, Digital Fusion
+     * Licensed under the MIT license.
+     * http://teamdf.com/jquery-plugins/license/
+     *
+     * @author Sam Sehnert
+     * @desc A small plugin that checks whether elements are within
+     *       the user visible viewport of a web browser.
+     *       can accounts for vertical position, horizontal, or both
+     */
+    var $w=$(window);
+    $.fn.visible = function(partial,hidden,direction,container){
+
+        if (this.length < 1)
+            return;
+	
+	// Set direction default to 'both'.
+	direction = direction || 'both';
+	    
+        var $t          = this.length > 1 ? this.eq(0) : this,
+						isContained = typeof container !== 'undefined' && container !== null,
+						$c				  = isContained ? $(container) : $w,
+						wPosition        = isContained ? $c.position() : 0,
+            t           = $t.get(0),
+            vpWidth     = $c.outerWidth(),
+            vpHeight    = $c.outerHeight(),
+            clientSize  = hidden === true ? t.offsetWidth * t.offsetHeight : true;
+
+        if (typeof t.getBoundingClientRect === 'function'){
+
+            // Use this native browser method, if available.
+            var rec = t.getBoundingClientRect(),
+                tViz = isContained ?
+												rec.top - wPosition.top >= 0 && rec.top < vpHeight + wPosition.top :
+												rec.top >= 0 && rec.top < vpHeight,
+                bViz = isContained ?
+												rec.bottom - wPosition.top > 0 && rec.bottom <= vpHeight + wPosition.top :
+												rec.bottom > 0 && rec.bottom <= vpHeight,
+                lViz = isContained ?
+												rec.left - wPosition.left >= 0 && rec.left < vpWidth + wPosition.left :
+												rec.left >= 0 && rec.left <  vpWidth,
+                rViz = isContained ?
+												rec.right - wPosition.left > 0  && rec.right < vpWidth + wPosition.left  :
+												rec.right > 0 && rec.right <= vpWidth,
+                vVisible   = partial ? tViz || bViz : tViz && bViz,
+                hVisible   = partial ? lViz || rViz : lViz && rViz,
+		vVisible = (rec.top < 0 && rec.bottom > vpHeight) ? true : vVisible,
+                hVisible = (rec.left < 0 && rec.right > vpWidth) ? true : hVisible;
+
+            if(direction === 'both')
+                return clientSize && vVisible && hVisible;
+            else if(direction === 'vertical')
+                return clientSize && vVisible;
+            else if(direction === 'horizontal')
+                return clientSize && hVisible;
+        } else {
+
+            var viewTop 				= isContained ? 0 : wPosition,
+                viewBottom      = viewTop + vpHeight,
+                viewLeft        = $c.scrollLeft(),
+                viewRight       = viewLeft + vpWidth,
+                position          = $t.position(),
+                _top            = position.top,
+                _bottom         = _top + $t.height(),
+                _left           = position.left,
+                _right          = _left + $t.width(),
+                compareTop      = partial === true ? _bottom : _top,
+                compareBottom   = partial === true ? _top : _bottom,
+                compareLeft     = partial === true ? _right : _left,
+                compareRight    = partial === true ? _left : _right;
+
+            if(direction === 'both')
+                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop)) && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
+            else if(direction === 'vertical')
+                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+            else if(direction === 'horizontal')
+                return !!clientSize && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
+        }
+    };
+
+})(jQuery);
+
 $(document).ready(function () {
+    
+    $(window).scroll(function(e) {
+        checkVisible();
+    });
+  
+   
     $('.slide-news-right').slick({
         infinite: false,
         slidesToShow: 1, 
@@ -51,6 +142,27 @@ $(document).ready(function () {
         var price_num = num_price.toLocaleString();
         $(this).parents().parents(".box-price").children(".total-price").children(".box-cell-price").val(price_num + ' VND');
     });
+    $(document).on("click", ".increase", function () {
+        var boxPrice = $(this).parents('.box-price');
+        var currentVal = parseInt(boxPrice.find('.input-number').val());
+        if (currentVal != NaN) {
+            boxPrice.find('.input-number').val(currentVal + 1);
+            var num_price = (currentVal + 1) * parseInt(price);
+            var price_num = num_price.toLocaleString();
+            boxPrice.find('.box-cell-price').val(price_num + ' VND');
+        }
+    });
+    
+    $(document).on("click", ".decrease", function () {
+        var boxPrice = $(this).parents('.box-price');
+        var currentVal = parseInt(boxPrice.find('.input-number').val());
+        if (currentVal != NaN && currentVal > 1) {
+            boxPrice.find('.input-number').val(currentVal - 1);
+            var num_price = (currentVal - 1) * parseInt(price);
+            var price_num = num_price.toLocaleString();
+            boxPrice.find('.box-cell-price').val(price_num + ' VND');
+        }
+    });
     $("#open-support-active").click(function(){
         $(".longform-bar-fixbottom-2").removeClass("shortbar-longform");
         $(".longform-bar-fixbottom-2").removeClass("product-active");
@@ -81,33 +193,19 @@ $(function(){
 });
 
 
-$(function () {
-    set_($('#number-max'), 100); //count form 1
-    set_($('#number-max-2'), 100); //count form 2
+  
+function checkVisible() {
+    let check = false;
+    $('.box-info-right').each(function() {
+        if ($(this).visible()) {
+            check = true;
+        }
+    });
 
-    function set_(_this, max) {
-        var block = _this.parent();
-
-        block.find(".increase").click(function () {
-            var currentVal = parseInt(_this.val());
-            console.log(currentVal);
-
-            if (currentVal != NaN && currentVal + 1 <= max) {
-                _this.val(currentVal + 1);
-                var num_price = (currentVal + 1) * parseInt(price);
-                var price_num = num_price.toLocaleString();
-                block.parents().parents(".box-price").children(".total-price").children(".box-cell-price").val(price_num + ' VND');
-            }
-        });
-        block.find(".decrease").click(function () {
-            var currentVal = parseInt(_this.val());
-
-            if (currentVal != NaN && currentVal > 1) {
-                _this.val(currentVal - 1);
-                var num_price = (currentVal - 1) * parseInt(price);
-                var price_num = num_price.toLocaleString();
-                block.parents().parents(".box-price").children(".total-price").children(".box-cell-price").val(price_num + ' VND');
-            }
-        });
+    if (check) {
+        $(".longform-bar-fixbottom-2").addClass('hidden-form');
+    } else {
+        $(".longform-bar-fixbottom-2").removeClass('hidden-form');
     }
-});
+}
+ 

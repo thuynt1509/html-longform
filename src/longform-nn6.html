@@ -753,7 +753,10 @@
                             <!-- start form quảng cảo -->
                             <div class="box-banner-form">
                                 <!-- ảnh banner mobile -->
-                                <img class="banner-mb" src="images/img-longform/img-banner-mb.jpg"/>
+                                <picture>
+                                    <source media="(max-width:767px)" srcset="images/img-longform/bg-form2.jpg">
+                                    <img src="images/img-longform/bg-form2.jpg"/>
+                                </picture>
                                 <!-- ảnh banner mobile -->
                                 <div class="wrp-form-longform">
                                     <div class="modal-content">
@@ -1175,6 +1178,12 @@
     </div>
 </section>
 
+<!-- loading start-->
+<div class="loading" style="display: none;">
+    <div class="donut"></div>
+    <h2 class="text-loading">Loading</h2>
+</div>
+<!-- loading end-->
 
 <section class="list-products-by-cate related-products margin-b-0">
     <div class="container">
