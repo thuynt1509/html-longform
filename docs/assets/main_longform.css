@@ -1946,53 +1946,10 @@
   overflow: hidden;
 }
 .popup-img .img-show img {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
-}
-.popup-img .btn-close {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  z-index: 99;
-  cursor: pointer;
-  padding: 5px 10px;
-}
-@media only screen and (max-width: 599px) {
-  .popup-img .img-show {
-    width: 100%;
-  }
-}
-
-.popup-img {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.66);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  display: none;
-}
-.popup-img .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.popup-img .img-show {
-  width: 600px;
-  height: auto;
-  background: #FFF;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-}
-.popup-img .img-show img {
-  width: 100%;
-  height: 100%;
+  display: block;
+  margin: 0 auto;
 }
 .popup-img .btn-close {
   position: absolute;
